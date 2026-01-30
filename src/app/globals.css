@@ -18,15 +18,14 @@
   --font-sora: var(--font-sora-sans);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sora);
+  background-color: var(--primary-white);
+  font-family: var(--font-sora-sans);
 }

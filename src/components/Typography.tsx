@@ -17,53 +17,56 @@ const fontColor = {
 } as const;
 
 export function Heading({
+  as: Tag = 'h1',
   weight = 'bold',
-  text,
   outlined,
   color = 'black',
-  ...props
+  children,
+  className = '',
 }: TypographyProps) {
-  return (
-    <>
-      {!outlined && (
-        <h1
-          style={{ color: `var(${fontColor[color]})` }}
-          className={` text-5xl/[56px] ${fontWeightMap[weight]}`}
-        >
-          {text}
-        </h1>
-      )}
-      {outlined && (
-        <h1
-          style={{ color: `var(${fontColor[color]})` }}
-          className={` relative text-5xl/[56px] ${fontWeightMap[weight]}`}
-        >
-          {/* Stroke (fora) */}
-          <span className="absolute inset-0 text-transparent tracking-[-0.02em] [-webkit-text-stroke:4px_black]">
-            {text}
-          </span>
+  const baseStyles = `text-5xl/[56px] tracking-[-0.02em] ${fontWeightMap[weight]} ${className}`;
 
-          {/* Texto normal */}
-          <span className="relative tracking-[-0.02em] text-(--primary-white)">
-            {text}
-          </span>
-        </h1>
-      )}
-    </>
+  if (!outlined) {
+    return (
+      <Tag style={{ color: `var(${fontColor[color]})` }} className={baseStyles}>
+        {children}
+      </Tag>
+    );
+  }
+
+  return (
+    <Tag
+      style={{ color: `var(${fontColor[color]})` }}
+      className={`relative ${baseStyles}`}
+    >
+      {/* Stroke */}
+      <span className="absolute inset-0 text-transparent [-webkit-text-stroke:4px_black]">
+        {children}
+      </span>
+
+      {/* Texto normal */}
+      <span className="relative text-(--primary-white)">{children}</span>
+    </Tag>
   );
 }
 export function Paragraph({
-  weight = 'bold',
+  weight = 'regular',
   text,
   color = 'zinc500',
+  children,
   ...props
 }: TypographyProps) {
   return (
     <p
       style={{ color: `var(${fontColor[color]})` }}
-      className={` text-base tracking-[0.02em]`}
+      className={` text-base 
+        md:text-lg 
+        leading-relaxed 
+        tracking-[0.01em] 
+        ${fontWeightMap[weight]} 
+         max-w-xl`}
     >
-      {text}
+      {children}
     </p>
   );
 }

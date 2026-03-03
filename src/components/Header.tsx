@@ -1,7 +1,7 @@
 import { Download } from 'lucide-react';
+import { Code } from '../assets/icons/code';
 import { Button } from './Button';
 import { Display } from './Typography';
-import { Code } from './icons/code';
 
 export function Header() {
   return (

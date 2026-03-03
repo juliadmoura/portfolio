@@ -1,8 +1,13 @@
+import { ElementType, ReactNode } from 'react';
+
 export type TypographyProps = {
-  weight: FontWeight;
-  text: string;
+  weight?: FontWeight;
+  text?: string;
   outlined?: boolean;
   color?: FontColor;
+  children?: ReactNode;
+  as?: ElementType;
+  className?: string;
 };
 
 export type FontWeight =

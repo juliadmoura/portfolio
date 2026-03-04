@@ -15,7 +15,6 @@ const fontColor = {
   black: '--primary-black',
   white: '--primary-white',
 } as const;
-
 export function Heading({
   as: Tag = 'h1',
   weight = 'bold',
@@ -60,11 +59,10 @@ export function Paragraph({
     <p
       style={{ color: `var(${fontColor[color]})` }}
       className={` text-base 
-        md:text-lg 
         leading-relaxed 
         tracking-[0.01em] 
         ${fontWeightMap[weight]} 
-         max-w-xl`}
+        `}
     >
       {children}
     </p>
@@ -73,24 +71,44 @@ export function Paragraph({
 
 export function Display({
   weight = 'bold',
-  text,
   color = 'black',
+  children,
+  text,
+  inheritColor = false,
   ...props
 }: TypographyProps) {
   return (
-    <>
-      <h1
-        className={`
-          text-[20px]/[24px]
-          tracking-[0.02em]
-          ${fontWeightMap[weight]}
-          transition-colors duration-200
-          text-(color:${fontColor[color]})
-          group-hover:text-(color:--zinc-500)
-        `}
-      >
-        {text}
-      </h1>
-    </>
+    <h1
+      className={`
+      text-[20px]/[24px]
+      tracking-[0.02em]
+      ${fontWeightMap[weight]}
+      ${!inheritColor ? `text-[var(${fontColor[color]})]` : ''}
+      transition-colors duration-200
+    `}
+      {...props}
+    >
+      {children ?? text}
+    </h1>
+  );
+}
+export function Title({
+  weight = 'semibold',
+  text,
+  color = 'white',
+  children,
+  ...props
+}: TypographyProps) {
+  return (
+    <p
+      style={{ color: `var(${fontColor[color]})` }}
+      className={` text-2xl
+        leading-relaxed 
+        tracking-[0.01em] 
+        ${fontWeightMap[weight]} 
+         `}
+    >
+      {children}
+    </p>
   );
 }

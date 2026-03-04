@@ -1,9 +1,9 @@
 import { Download } from 'lucide-react';
-import { Code } from '../assets/icons/code';
-import { Button } from './Button';
-import { Display } from './Typography';
+import { Code } from '../../assets/icons/code';
+import { Button } from '../Atoms/Button';
+import { Display } from '../Atoms/Typography';
 
-export function Header() {
+export default function Header() {
   return (
     <header className="bg-white">
       <div className="mx-auto flex gap-12 justify-evenly max-w-7xl items-center px-20 py-6 sm:px-6 lg:px-8">

@@ -11,8 +11,8 @@ import { Redux } from '@/assets/icons/skills/redux';
 import { Scss } from '@/assets/icons/skills/scss';
 import { Sql } from '@/assets/icons/skills/sql';
 import { TypeScript } from '@/assets/icons/skills/typescript';
-import { SkillBox } from './Button';
-import { Heading } from './Typography';
+import { SkillBox } from '../Atoms/Button';
+import { Heading } from '../Atoms/Typography';
 
 export default function Skills() {
   return (

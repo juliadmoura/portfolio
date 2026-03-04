@@ -1,6 +1,6 @@
-import { Github } from '../assets/icons/github';
-import { LinkedIn } from '../assets/icons/linkedin';
-import { IconButton } from './Button';
+import { Github } from '../../assets/icons/github';
+import { LinkedIn } from '../../assets/icons/linkedin';
+import { IconButton } from '../Atoms/Button';
 
 export default function Social() {
   return (

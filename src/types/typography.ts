@@ -8,6 +8,7 @@ export type TypographyProps = {
   children?: ReactNode;
   as?: ElementType;
   className?: string;
+  inheritColor?: boolean;
 };
 
 export type FontWeight =

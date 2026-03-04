@@ -1,7 +1,7 @@
 import bannerImage from '@/assets/images/banner-girl.jpg';
 import Image from 'next/image';
+import { Heading, Paragraph } from '../Atoms/Typography';
 import Social from './IconsBox';
-import { Heading, Paragraph } from './Typography';
 
 export default function Banner() {
   return (
@@ -22,7 +22,7 @@ export default function Banner() {
             Web & Mobile.
           </Heading>
         </div>
-        <div>
+        <div className="max-w-xl">
           <Paragraph>
             Sou Desenvolvedora com foco em front-end e com sólida base em
             desenvolvimento web e mobile, atuando com React.js, React Native,

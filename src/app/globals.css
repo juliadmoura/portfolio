@@ -11,6 +11,17 @@
   --zinc-800: #27272a;
   --error-500: #ef4444;
 }
+@layer base {
+  ::selection {
+    @apply bg-black text-white;
+  }
+
+  .selection-light::selection,
+  .selection-light *::selection {
+    background-color: white;
+    color: black;
+  }
+}
 
 @theme inline {
   --color-background: var(--background);

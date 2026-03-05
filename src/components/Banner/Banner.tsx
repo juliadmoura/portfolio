@@ -23,7 +23,7 @@ export default function Banner() {
           </Heading>
         </div>
         <div className="max-w-xl">
-          <Paragraph>
+          <Paragraph color="zinc500">
             Sou Desenvolvedora com foco em front-end e com sólida base em
             desenvolvimento web e mobile, atuando com React.js, React Native,
             JavaScript e TypeScript, além de vivência prática em metodologias
@@ -40,7 +40,7 @@ export default function Banner() {
         <Image
           src={bannerImage}
           alt="Imagem do banner"
-          className="w-70 md:w-150 h-auto object-contain"
+          className="md:w-150 h-auto object-contain"
           priority
         />
       </div>

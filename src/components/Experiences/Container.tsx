@@ -5,7 +5,7 @@ type ContainerProps = React.ComponentProps<typeof Display>;
 
 export default function Container({ children, ...props }: ContainerProps) {
   function getBgByIndex(index: number) {
-    return index % 2 === 0 ? 'bg-(--primary-black)' : 'bg-(--zinc-800)';
+    return index % 2 === 0 ? 'bg-primary-black' : 'bg-(--zinc-800)';
   }
 
   return (
@@ -22,17 +22,23 @@ export default function Container({ children, ...props }: ContainerProps) {
           <div className="flex flex-col gap-4">
             <div className="flex md:flex-row flex-col justify-between md:items-center">
               <div className="w-3/4">
-                <Title>
+                <Title color="white" className="selection-light">
                   {exp.empresa} | {exp.cargo}
                 </Title>
               </div>
 
-              <Paragraph weight="semibold" color="zinc300">
+              <Paragraph
+                weight="semibold"
+                color="zinc300"
+                className="selection-light"
+              >
                 {exp.inicio} - {exp.fim}
               </Paragraph>
             </div>
 
-            <Paragraph>{exp.descricao}</Paragraph>
+            <Paragraph color="zinc300" className="selection-light">
+              {exp.descricao}
+            </Paragraph>
           </div>
         </div>
       ))}

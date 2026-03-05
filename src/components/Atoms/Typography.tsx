@@ -10,10 +10,10 @@ const fontWeightMap = {
 } as const;
 
 const fontColor = {
-  zinc500: '--zinc-500',
-  zinc300: '--zinc-300',
-  black: '--primary-black',
-  white: '--primary-white',
+  zinc500: 'text-(--zinc-500)',
+  zinc300: 'text-(--zinc-300)',
+  black: 'text-(--primary-black)',
+  white: 'text-(--primary-white)',
 } as const;
 export function Heading({
   as: Tag = 'h1',
@@ -23,21 +23,14 @@ export function Heading({
   children,
   className = '',
 }: TypographyProps) {
-  const baseStyles = `text-5xl/[56px] tracking-[-0.02em] ${fontWeightMap[weight]} ${className}`;
+  const baseStyles = `text-5xl/[56px] tracking-[-0.02em] ${fontWeightMap[weight]} ${className} ${fontColor[color]}`;
 
   if (!outlined) {
-    return (
-      <Tag style={{ color: `var(${fontColor[color]})` }} className={baseStyles}>
-        {children}
-      </Tag>
-    );
+    return <Tag className={baseStyles}>{children}</Tag>;
   }
 
   return (
-    <Tag
-      style={{ color: `var(${fontColor[color]})` }}
-      className={`relative ${baseStyles}`}
-    >
+    <Tag className={`relative ${baseStyles}`}>
       {/* Stroke */}
       <span className="absolute inset-0 text-transparent [-webkit-text-stroke:4px_black]">
         {children}
@@ -53,15 +46,17 @@ export function Paragraph({
   text,
   color = 'zinc500',
   children,
+  className,
   ...props
 }: TypographyProps) {
   return (
     <p
-      style={{ color: `var(${fontColor[color]})` }}
       className={` text-base 
         leading-relaxed 
         tracking-[0.01em] 
         ${fontWeightMap[weight]} 
+        ${fontColor[color]}
+        ${className}
         `}
     >
       {children}
@@ -83,7 +78,7 @@ export function Display({
       text-[20px]/[24px]
       tracking-[0.02em]
       ${fontWeightMap[weight]}
-      ${!inheritColor ? `text-[var(${fontColor[color]})]` : ''}
+      ${!inheritColor ? `${fontColor[color]}` : ''}
       transition-colors duration-200
     `}
       {...props}
@@ -97,15 +92,17 @@ export function Title({
   text,
   color = 'white',
   children,
+  className,
   ...props
 }: TypographyProps) {
   return (
     <p
-      style={{ color: `var(${fontColor[color]})` }}
       className={` text-2xl
         leading-relaxed 
         tracking-[0.01em] 
-        ${fontWeightMap[weight]} 
+        ${fontWeightMap[weight]}
+        ${fontColor[color]} 
+        ${className}
          `}
     >
       {children}

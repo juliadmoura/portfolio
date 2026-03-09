@@ -18,7 +18,7 @@ export default function About() {
           </div>
         </div>
         <div className="flex flex-col md:w-1/2 gap-8 p-6">
-          <Heading as="h2" color="black">
+          <Heading size="h1" color="black" className="pt-5">
             <span className="font-normal">Sobre </span>
             <span className="font-extrabold">Mim</span>
           </Heading>

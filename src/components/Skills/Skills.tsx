@@ -19,7 +19,7 @@ export default function Skills() {
     <>
       <section className="flex justify-center flex-col items-center gap-6 px-4 md:px-20 2xl:px-44 py-12 ">
         <div className="py-5">
-          <Heading as="h2">
+          <Heading size="h1">
             <span className="font-normal">Minhas </span>
             <span className="font-extrabold">Habilidades</span>
           </Heading>

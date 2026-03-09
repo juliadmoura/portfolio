@@ -8,17 +8,17 @@ export default function Banner() {
     <main className="flex flex-col-reverse justify-center md:flex-row items-center gap-6 px-6 md:px-20 py-12 ">
       <div className="flex flex-col gap-5">
         <div>
-          <Heading as="h1">
+          <Heading size="h1">
             <span className="font-normal">Olá, eu sou a </span>
             <span className="font-extrabold">Julia Damacena.</span>
           </Heading>
 
-          <Heading as="h2">
+          <Heading size="h1">
             <span className="font-normal">Desenvolvedora </span>
             <span className="font-extrabold">Front-end</span>
           </Heading>
 
-          <Heading as="h2" outlined>
+          <Heading size="h1" outlined>
             Web & Mobile.
           </Heading>
         </div>

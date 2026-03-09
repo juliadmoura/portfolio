@@ -1,4 +1,4 @@
-import { ElementType, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 export type TypographyProps = {
   weight?: FontWeight;
@@ -6,7 +6,7 @@ export type TypographyProps = {
   outlined?: boolean;
   color?: FontColor;
   children?: ReactNode;
-  as?: ElementType;
+  size?: FontSize;
   className?: string;
   inheritColor?: boolean;
 };
@@ -20,3 +20,5 @@ export type FontWeight =
   | 'extrabold';
 
 export type FontColor = 'zinc500' | 'zinc300' | 'white' | 'black';
+
+export type FontSize = 'h1' | 'h2';

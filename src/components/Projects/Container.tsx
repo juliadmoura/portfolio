@@ -27,7 +27,6 @@ export default function Container() {
           </div>
           <div className="md:w-1/2 gap-8 flex flex-col ">
             <Heading
-              as={'h2'}
               color="white"
               weight="bold"
               className="selection-light text-[32px]/[40px]"

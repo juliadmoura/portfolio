@@ -15,22 +15,27 @@ const fontColor = {
   black: 'text-(--primary-black)',
   white: 'text-(--primary-white)',
 } as const;
+
+const fontSize = {
+  h1: 'md:text-[48px]/[56px] text-[28px]/[32px]',
+  h2: 'md:text-[28px]/[32px] text-[20px]/[24px]',
+};
 export function Heading({
-  as: Tag = 'h1',
+  size = 'h1',
   weight = 'bold',
   outlined,
   color = 'black',
   children,
   className = '',
 }: TypographyProps) {
-  const baseStyles = `text-5xl/[56px] tracking-[-0.02em] ${fontWeightMap[weight]} ${className} ${fontColor[color]}`;
+  const baseStyles = `tracking-[-0.02em] ${fontWeightMap[weight]} ${className} ${fontColor[color]} ${fontSize[size]}`;
 
   if (!outlined) {
-    return <Tag className={baseStyles}>{children}</Tag>;
+    return <p className={baseStyles}>{children}</p>;
   }
 
   return (
-    <Tag className={`relative ${baseStyles}`}>
+    <p className={`relative ${baseStyles} `}>
       {/* Stroke */}
       <span className="absolute inset-0 text-transparent [-webkit-text-stroke:4px_black]">
         {children}
@@ -38,7 +43,7 @@ export function Heading({
 
       {/* Texto normal */}
       <span className="relative text-(--primary-white)">{children}</span>
-    </Tag>
+    </p>
   );
 }
 export function Paragraph({

@@ -1,12 +1,20 @@
 import { ButtonProps } from '@/types/button';
 import { Display } from './Typography';
 
-export function Button({ label, icon, className, ...props }: ButtonProps) {
+export function Button({
+  label,
+  icon,
+  className,
+  href,
+  download,
+  ...props
+}: ButtonProps) {
   return (
     <>
       <a
         className={`inline-flex items-center gap-2 rounded-sm bg-(--primary-black) px-7 py-3 text-(--primary-white) hover:bg-(--primary-neutral) hover:text-(--primary-white) ${className}`}
-        href="#"
+        href={href}
+        download={download}
       >
         <span className="text-[20px]"> {label} </span>
 

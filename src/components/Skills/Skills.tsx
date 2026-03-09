@@ -17,7 +17,10 @@ import { Heading } from '../Atoms/Typography';
 export default function Skills() {
   return (
     <>
-      <section className="flex justify-center flex-col items-center gap-6 px-4 md:px-20 2xl:px-44 py-12 ">
+      <section
+        id="skills"
+        className="flex justify-center flex-col items-center gap-6 px-4 md:px-20 2xl:px-44 py-12 "
+      >
         <div className="py-5">
           <Heading size="h1">
             <span className="font-normal">Minhas </span>

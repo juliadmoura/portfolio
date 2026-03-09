@@ -6,4 +6,6 @@ export type ButtonProps = {
   disabled?: boolean;
   icon?: ReactNode;
   url?: string;
+  href?: string;
+  download?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;

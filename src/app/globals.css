@@ -35,8 +35,32 @@
     --foreground: #ededed;
   }
 } */
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: var(--primary-white);
   font-family: var(--font-sora-sans);
+}
+/* largura da barra */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* fundo da barra */
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+/* parte que desliza */
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 2px solid #0a0a0a;
+}
+
+/* hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #d4d4d4;
 }

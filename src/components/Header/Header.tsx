@@ -5,7 +5,7 @@ import { Display } from '../Atoms/Typography';
 
 export default function Header() {
   return (
-    <header className="bg-white">
+    <header id="header" className="bg-white">
       <div className="mx-auto flex gap-12 justify-evenly max-w-7xl items-center px-20 py-6 sm:px-6 lg:px-8">
         <a className="block mr-auto" href="#">
           <Code />
@@ -14,16 +14,7 @@ export default function Header() {
           <ul className="flex items-center gap-10 text-sm">
             <li>
               <a
-                href="#"
-                className="group text-(--primary-black) hover:text-(--primary-neutral) transition-colors"
-              >
-                <Display text="Sobre mim" weight="semibold" color="black" />
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#"
+                href="#skills"
                 className="group text-(--primary-black) hover:text-(--primary-neutral) transition-colors"
               >
                 <Display text="Habilidades" weight="semibold" color="black" />
@@ -32,7 +23,23 @@ export default function Header() {
 
             <li>
               <a
-                href="#"
+                href="#experiences"
+                className="group text-(--primary-black) hover:text-(--primary-neutral) transition-colors"
+              >
+                <Display text="Experiência" weight="semibold" color="black" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                className="group text-(--primary-black) hover:text-(--primary-neutral) transition-colors"
+              >
+                <Display text="Sobre mim" weight="semibold" color="black" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
                 className="group text-(--primary-black) hover:text-(--primary-neutral) transition-colors"
               >
                 <Display text="Projetos" weight="semibold" color="black" />
@@ -41,7 +48,7 @@ export default function Header() {
 
             <li>
               <a
-                href="#"
+                href="#contact"
                 className="group text-(--primary-black) hover:text-(--primary-neutral) transition-colors"
               >
                 <Display text="Contato" weight="semibold" color="black" />
@@ -52,26 +59,13 @@ export default function Header() {
 
         <div className="flex items-center gap-4">
           <div className="sm:flex sm:gap-4 h-full">
-            <Button label="Currículo" icon={<Download size={20} />}></Button>
+            <Button
+              href="/cv-julia-damacena.pdf"
+              label="Currículo"
+              icon={<Download size={20} />}
+              download
+            ></Button>
           </div>
-
-          {/* <button className="block rounded-sm bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
-              <span className="sr-only">Toggle menu</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="size-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </button> */}
         </div>
       </div>
     </header>

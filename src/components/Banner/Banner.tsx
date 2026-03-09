@@ -5,7 +5,10 @@ import Social from './IconsBox';
 
 export default function Banner() {
   return (
-    <main className="flex flex-col-reverse justify-center md:flex-row items-center gap-6 px-6 md:px-20 py-12 ">
+    <main
+      id="banner"
+      className="flex flex-col-reverse justify-center md:flex-row items-center gap-6 px-6 md:px-20 py-12 "
+    >
       <div className="flex flex-col gap-5">
         <div>
           <Heading size="h1">
